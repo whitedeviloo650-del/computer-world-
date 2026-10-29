@@ -1,0 +1,198 @@
+/* Computer World shared stylesheet */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #182333;
+    background-color: #ffffff;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 22px 5%;
+    color: #ffffff;
+    background-color: #182333;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 12px 16px;
+    background-color: #29445f;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #182333;
+    background-color: #ffffff;
+    font-size: 17px;
+}
+
+footer {
+    padding: 24px;
+    color: #ffffff;
+    background-color: #182333;
+    text-align: center;
+}
+
+li {
+    display: block;
+    width: 90%;
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 6px;
+}
+li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: #145b96;
+    font-weight: bold;
+}
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+h1 {
+    color: #182333;
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: left;
+}
+
+p { line-height: 1.65; }
+
+a { color: #145b96; }
+a:focus-visible {
+    outline: 3px solid #f0a500;
+    outline-offset: 3px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---- Logo ---- */
+.brand {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+.brand span { color: #8fd0ff; }
+
+nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+nav a:focus-visible, .brand:focus-visible { outline-color: #ffd166; }
+
+/* ---- Shared text helpers ---- */
+.eyebrow {
+    margin: 0 0 6px;
+    color: #145b96;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+.button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 12px 22px;
+    color: #ffffff;
+    background-color: #145b96;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.button:hover { background-color: #0e4572; }
+
+/* ---- Home page ---- */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.hero img { border-radius: 10px; }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+.card {
+    overflow: hidden;
+    border: 1px solid #d3dce6;
+    border-radius: 10px;
+}
+.card img { display: block; width: 100%; }
+.pad { padding: 16px 20px 20px; }
+.facts {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    margin-top: 40px;
+    padding: 24px;
+    background-color: #eef3f8;
+    border-radius: 10px;
+}
+
+/* ---- News page ---- */
+.news-list { display: grid; gap: 24px; }
+.news-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #d3dce6;
+}
+.news-item img { border-radius: 10px; }
+
+/* ---- Guides page ---- */
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+.guide-card {
+    padding: 20px;
+    border: 1px solid #d3dce6;
+    border-radius: 10px;
+}
+.number {
+    display: inline-block;
+    color: #145b96;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* ---- Resource box ---- */
+.resource {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background-color: #eef3f8;
+    border-left: 5px solid #145b96;
+    border-radius: 6px;
+}
+
+@media (max-width: 700px) {
+    nav { gap: 12px; }
+    main { padding: 18px; }
+    .hero, .facts, .news-item { grid-template-columns: 1fr; }
+}
